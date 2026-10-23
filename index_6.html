@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SB90s – Singles Born in the 90s | Waterloo Region</title>
+<meta name="description" content="In-person events in Waterloo Region for single people born between 1990 and 1999. Climbing, fitness, yoga, entrepreneurs and dance, with people who share your values.">
+<meta property="og:title" content="SB90s – Singles Born in the 90s">
+<meta property="og:description" content="In-person events for single people born between 1990 and 1999.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23000' stroke='%23bbb' stroke-width='4'/%3E%3Ctext x='50' y='48' text-anchor='middle' font-family='Arial Black,sans-serif' font-style='italic' font-weight='900' font-size='34' fill='%23ccc'%3ESB%3C/text%3E%3Ctext x='50' y='80' text-anchor='middle' font-family='Arial Black,sans-serif' font-style='italic' font-weight='900' font-size='30' fill='%2300f0ff'%3E90s%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,800;1,900&family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#000;
+  --ink:#07090b;
+  --panel:#0e1215;
+  --line:#1f272d;
+  --silver:#cccccc;
+  --cyan:#00f0ff;
+  --white:#fff;
+  --muted:#93a0a8;
+  --display:"Exo 2","Arial Black",Impact,sans-serif;
+  --body:"Rubik",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--body);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.5rem}
+
+/* top bar */
+header{position:sticky;top:0;z-index:10;background:rgba(0,0,0,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:3.75rem}
+.mark{font-family:var(--display);font-style:italic;font-weight:900;font-size:1.5rem;text-decoration:none;letter-spacing:-.01em}
+.mark b{color:var(--silver);font-weight:900}
+.mark i{color:var(--cyan);font-style:italic}
+.mark span{color:var(--white);font-size:.75em}
+nav{display:flex;gap:1.5rem;align-items:center;font-size:.95rem}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--white)}
+nav .join{color:#000;background:var(--cyan);padding:.45rem 1rem;border-radius:999px;font-weight:600}
+nav .join:hover{color:#000;background:#5af6ff}
+@media(max-width:640px){nav .hide{display:none}}
+
+/* hero: the logo pill, enlarged */
+.hero{padding:clamp(3rem,9vw,6.5rem) 0 clamp(3rem,7vw,5rem)}
+.pill{
+  position:relative;margin:0 auto;max-width:62rem;
+  background:#000;border-radius:999px;
+  padding:clamp(1.75rem,5vw,3.5rem) clamp(1.5rem,6vw,5rem) clamp(1.25rem,3vw,2.25rem);
+  border:clamp(5px,.9vw,10px) solid transparent;
+  background:
+    linear-gradient(#000,#000) padding-box,
+    linear-gradient(100deg,#fff 0%,#666 22%,#d8d8d8 50%,#555 78%,#eee 100%) border-box;
+  text-align:center;
+}
+.word{
+  font-family:var(--display);font-style:italic;font-weight:900;
+  font-size:clamp(4.5rem,18vw,13rem);line-height:.9;letter-spacing:-.02em;
+  display:flex;justify-content:center;align-items:baseline;gap:.08em;
+}
+.word .sb{color:var(--silver)}
+.word .n{color:var(--cyan)}
+.word .s{color:var(--white);font-size:.42em}
+.tag{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:clamp(.75rem,2vw,1.5rem);font-size:clamp(.85rem,2.2vw,1.35rem);letter-spacing:.08em;color:#e8e8e8}
+.tag:before,.tag:after{content:"";height:3px;width:clamp(1.5rem,9vw,7rem);background:var(--cyan)}
+
+.lede{max-width:40rem;margin:clamp(2.5rem,5vw,3.75rem) auto 0;text-align:center}
+.lede h1{font-family:var(--display);font-style:italic;font-weight:800;font-size:clamp(1.9rem,4.6vw,3rem);line-height:1.1;letter-spacing:-.01em}
+.lede p{color:var(--muted);margin-top:1rem;font-size:1.15rem}
+.cta{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-top:2rem}
+.btn{display:inline-block;font:600 1rem var(--body);padding:.85rem 1.6rem;border-radius:999px;text-decoration:none;border:2px solid var(--cyan);cursor:pointer}
+.btn.solid{background:var(--cyan);color:#000}
+.btn.solid:hover{background:#5af6ff;border-color:#5af6ff}
+.btn.ghost{background:transparent;color:var(--white)}
+.btn.ghost:hover{background:rgba(0,240,255,.12)}
+
+/* birth-year scale */
+.years{margin-top:clamp(2.5rem,5vw,3.5rem);display:grid;grid-template-columns:repeat(10,1fr);gap:.35rem;max-width:44rem;margin-left:auto;margin-right:auto}
+.years button{font:inherit;font-family:var(--display);font-style:italic;font-weight:800;text-align:center;padding:.5rem 0;border-radius:.5rem;background:var(--panel);color:var(--silver);border:1px solid var(--line);font-size:clamp(.8rem,2.2vw,1.1rem);cursor:pointer;transition:background .15s,color .15s,border-color .15s,transform .15s}
+.years button:hover,.years button.on{background:var(--cyan);color:#000;border-color:var(--cyan)}
+.years button:hover{transform:translateY(-3px)}
+.years button:active{transform:translateY(0) scale(.96)}
+
+/* year pop-up */
+dialog.yr{border:0;padding:0;background:transparent;color:var(--white);max-width:min(26rem,calc(100vw - 2rem));width:100%;overflow:visible}
+dialog.yr::backdrop{background:rgba(0,0,0,.78);backdrop-filter:blur(4px)}
+dialog.yr[open]{animation:pop .28s cubic-bezier(.2,1.2,.4,1)}
+dialog.yr[open]::backdrop{animation:fade .2s ease-out}
+@keyframes pop{from{opacity:0;transform:translateY(14px) scale(.85)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.card{position:relative;text-align:center;border-radius:2rem;padding:2.25rem 1.75rem 1.75rem;border:6px solid transparent;
+  background:linear-gradient(#000,#000) padding-box,linear-gradient(100deg,#fff 0%,#666 22%,#d8d8d8 50%,#555 78%,#eee 100%) border-box}
+.card .cls{color:var(--muted);font-size:1rem}
+.card .big{font-family:var(--display);font-style:italic;font-weight:900;font-size:clamp(4.5rem,22vw,7rem);line-height:1;color:var(--cyan);letter-spacing:-.02em;margin:.25rem 0 .5rem}
+.card .age{font-family:var(--display);font-style:italic;font-weight:800;font-size:1.5rem;color:var(--silver)}
+.card .fact{color:#d3dade;margin:1rem auto 1.5rem;max-width:20rem}
+.card .btn{width:100%}
+.card .nav{display:flex;justify-content:space-between;margin-top:1rem}
+.card .nav button,.card .x{background:none;border:0;color:var(--muted);font:inherit;cursor:pointer;padding:.4rem .6rem;border-radius:.5rem}
+.card .nav button:hover,.card .x:hover{color:var(--white)}
+.card .x{position:absolute;top:.6rem;right:.75rem;font-size:1.5rem;line-height:1}
+.years-note{text-align:center;color:var(--muted);font-size:.9rem;margin-top:.75rem}
+
+/* sections */
+section{padding:clamp(3.5rem,8vw,6rem) 0;border-top:1px solid var(--line)}
+h2{font-family:var(--display);font-style:italic;font-weight:900;font-size:clamp(2rem,5vw,3.25rem);line-height:1.05;letter-spacing:-.01em}
+h2 em{font-style:italic;color:var(--cyan)}
+.two{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(2rem,6vw,5rem);align-items:start}
+@media(max-width:800px){.two{grid-template-columns:1fr}}
+.prose p{color:#d3dade;max-width:36rem}
+.prose p+p{margin-top:1.1rem}
+
+/* events */
+.events{margin-top:2.5rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.ev{background:var(--ink);padding:1.75rem 1.5rem 2rem}
+.ev h3{font-family:var(--display);font-style:italic;font-weight:800;font-size:1.6rem;line-height:1.1;color:var(--cyan)}
+.ev p{color:var(--muted);margin-top:.6rem;font-size:1rem}
+.ev.wide{grid-column:span 3;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+@media(max-width:1000px){
+  .events{grid-template-columns:repeat(2,1fr)}
+  .ev:nth-child(5){grid-column:1/-1}
+  .ev.wide{grid-column:1/-1}
+}
+@media(max-width:560px){
+  .events{grid-template-columns:1fr}
+}
+.ev.wide p{margin:0;color:#d3dade}
+
+/* how it works */
+.how{margin-top:2.5rem;display:grid;gap:0}
+.how div{display:grid;grid-template-columns:minmax(9rem,14rem) 1fr;gap:1.5rem;padding:1.4rem 0;border-top:1px solid var(--line)}
+.how div:last-child{border-bottom:1px solid var(--line)}
+.how dt{font-family:var(--display);font-style:italic;font-weight:800;font-size:1.35rem;color:var(--silver)}
+.how dd{color:#d3dade;max-width:38rem}
+@media(max-width:640px){.how div{grid-template-columns:1fr;gap:.3rem}}
+
+/* form */
+.join-box{background:var(--panel);border:1px solid var(--line);border-radius:1.5rem;padding:clamp(1.5rem,4vw,3rem)}
+form{display:grid;gap:1rem;margin-top:1.75rem;max-width:34rem}
+label{display:grid;gap:.4rem;font-weight:500;font-size:.95rem}
+input,select{font:inherit;color:#fff;background:#000;border:1px solid #38434b;border-radius:.6rem;padding:.8rem .9rem;width:100%}
+input::placeholder{color:#5f6d75}
+input:focus,select:focus{border-color:var(--cyan);outline:none;box-shadow:0 0 0 3px rgba(0,240,255,.25)}
+
+fieldset{border:0;padding:0;min-width:0}
+legend{font-weight:500;font-size:.95rem;margin-bottom:.6rem;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{display:block;position:relative;font-weight:500}
+.chip input{position:absolute;opacity:0;width:1px;height:1px}
+.chip span{display:inline-block;padding:.55rem 1rem;border-radius:999px;border:1px solid #38434b;background:#000;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.chip span:hover{border-color:var(--cyan)}
+.chip input:checked+span{background:var(--cyan);color:#000;border-color:var(--cyan)}
+.chip input:focus-visible+span{outline:3px solid var(--cyan);outline-offset:3px}
+.fine{color:var(--muted);font-size:.875rem}
+.status{min-height:1.4em;font-size:.95rem;color:var(--cyan)}
+
+footer{border-top:1px solid var(--line);padding:2.5rem 0 3.5rem;color:var(--muted);font-size:.95rem}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center}
+footer a{color:var(--white);text-decoration:none;border-bottom:1px solid var(--cyan)}
+footer .links{display:flex;gap:1.5rem}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}dialog.yr[open],dialog.yr[open]::backdrop{animation:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="SB90s home"><b>SB</b> <i>90</i><span>s</span></a>
+    <nav aria-label="Main">
+      <a class="hide" href="#about">About</a>
+      <a class="hide" href="#events">Events</a>
+      <a class="hide" href="#how">How it works</a>
+      <a class="join" href="#join">Get invited</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <div class="pill" role="img" aria-label="SB90s – Singles Born in the 90s">
+      <div class="word" aria-hidden="true"><span class="sb">SB</span><span class="n">90</span><span class="s">s</span></div>
+      <div class="tag" aria-hidden="true">Singles Born in the 90s</div>
+    </div>
+
+    <div class="lede">
+      <h1>Meet other singles from your generation, in person, in Waterloo Region.</h1>
+      <p>Events for people born between 1990 and 1999, built around things you already love doing, with people who care about the same things you do.</p>
+      <div class="cta">
+        <a class="btn solid" href="#join">Get invited to the next event</a>
+        <a class="btn ghost" href="#events">See the events</a>
+      </div>
+    </div>
+
+    <div class="years" aria-label="Birth years 1990 to 1999">
+      <button type="button" data-year="1990">1990</button><button type="button" data-year="1991">1991</button><button type="button" data-year="1992">1992</button><button type="button" data-year="1993">1993</button><button type="button" data-year="1994">1994</button><button type="button" data-year="1995">1995</button><button type="button" data-year="1996">1996</button><button type="button" data-year="1997">1997</button><button type="button" data-year="1998">1998</button><button type="button" data-year="1999">1999</button>
+    </div>
+    <p class="years-note">If your birth year is on this list, you're in. Tap yours.</p>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap two">
+    <h2>Dating apps are <em>fine.</em> Doing something together is better.</h2>
+    <div class="prose">
+      <p>SB90s hosts in-person events for single people born in the 90s. Each one is organized around an activity, like climbing or yoga, so you meet people while doing something you care about instead of making small talk across a table.</p>
+      <p>Every event has a theme and a crowd that fits it. You'll show up already sharing something with the people around you, and the conversation tends to take care of itself.</p>
+    </div>
+  </div>
+</section>
+
+<section id="events">
+  <div class="wrap">
+    <h2>Five events. <em>Five kinds of people.</em></h2>
+    <p class="prose" style="margin-top:1rem;max-width:36rem"><span style="color:#d3dade">Pick the ones that sound like you. Come to all of them if you want.</span></p>
+    <div class="events">
+      <div class="ev"><h3>Climbers</h3><p>An evening at a climbing gym. Beginners are welcome, and nobody needs to be good at it.</p></div>
+      <div class="ev"><h3>Fitness</h3><p>For people who train and want to meet someone who gets it.</p></div>
+      <div class="ev"><h3>Yoga &amp; spiritual</h3><p>A slower, more reflective night for people who value mindfulness and growth.</p></div>
+      <div class="ev"><h3>Entrepreneurs</h3><p>For founders, freelancers and people building something of their own.</p></div>
+      <div class="ev"><h3>Ecstatic dance</h3><p>Movement, music and contact improv for people who like to let loose.</p></div>
+      <div class="ev wide"><p>Dates and locations go out to the invite list first.</p><a class="btn solid" href="#join">Join the list</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2>How it <em>works</em></h2>
+    <dl class="how">
+      <div><dt>Get on the list</dt><dd>Tell us your name, birth year and which events interest you.</dd></div>
+      <div><dt>Get the details</dt><dd>We email you the date, venue and what to bring as soon as an event is confirmed.</dd></div>
+      <div><dt>Show up and meet people</dt><dd>Everyone is single, born in the 90s, and there for the same activity. Come alone or bring a friend.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="join">
+  <div class="wrap">
+    <div class="join-box">
+      <h2>Join the <em>waiting list</em></h2>
+      <p class="prose" style="margin-top:1rem"><span style="color:#d3dade">Join the list and you'll hear about each event before it's public.</span></p>
+      <form id="signup" novalidate>
+        <label>Full name
+          <input name="name" autocomplete="name" required placeholder="Your full name">
+        </label>
+        <label>Email
+          <input name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+        </label>
+        <label>Cell phone
+          <input name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="519-555-0123">
+        </label>
+        <fieldset>
+          <legend>Which events do you want to attend? Choose as many as you like.</legend>
+          <div class="chips">
+            <label class="chip"><input type="checkbox" name="events" value="Climbers"><span>Climbers</span></label>
+            <label class="chip"><input type="checkbox" name="events" value="Fitness"><span>Fitness</span></label>
+            <label class="chip"><input type="checkbox" name="events" value="Yoga/Spiritual"><span>Yoga &amp; spiritual</span></label>
+            <label class="chip"><input type="checkbox" name="events" value="Entrepreneur"><span>Entrepreneurs</span></label>
+            <label class="chip"><input type="checkbox" name="events" value="Ecstatic Dance"><span>Ecstatic dance</span></label>
+          </div>
+        </fieldset>
+        <label>What year were you born?
+          <select name="year" required>
+            <option value="">Choose one</option>
+            <option>1990</option><option>1991</option><option>1992</option><option>1993</option><option>1994</option>
+            <option>1995</option><option>1996</option><option>1997</option><option>1998</option><option>1999</option>
+          </select>
+        </label>
+        <label>How did you hear about SB90s?
+          <select name="source" required>
+            <option value="">Choose one</option>
+            <option>Instagram</option>
+            <option>Email Newsletter</option>
+            <option>Friend/Colleague</option>
+            <option>Website</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <button class="btn solid" type="submit">Join the waiting list</button>
+        <p class="status" id="status" role="status"></p>
+        <p class="fine">We only use your details to send event invites.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<dialog class="yr" id="yrDialog" aria-label="Birth year">
+  <div class="card">
+    <button class="x" type="button" aria-label="Close" data-close>&times;</button>
+    <div class="cls">Class of</div>
+    <div class="big" id="yBig">1995</div>
+    <div class="age" id="yAge"></div>
+    <p class="fact" id="yFact"></p>
+    <button class="btn solid" type="button" id="yJoin">That's me. Get invited</button>
+    <div class="nav">
+      <button type="button" id="yPrev">&larr; Earlier</button>
+      <button type="button" id="yNext">Later &rarr;</button>
+    </div>
+  </div>
+</dialog>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> SB90s – Singles Born in the 90s · Waterloo Region, Ontario</span>
+    <div class="links">
+      <a id="ig" href="#">Instagram</a>
+      <a id="mail" href="#">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===== EDIT THESE ===== */
+const CONFIG = {
+  instagram: "https://www.instagram.com/singlesb90s/",
+  email: "YOUR_EMAIL@example.com",
+  // Google Form: signups are sent to your form and appear in its Responses tab / linked Sheet.
+  google: {
+    action: "https://docs.google.com/forms/d/e/1FAIpQLSdyh3UnqxAuPiH7pqAezDeVdRY-pP6At2BIIoMcboU4iPOBAQ/formResponse",
+    fields: {
+      name:   "entry.1234870078",  // Full Name
+      email:  "entry.1769349489",  // Email Address
+      phone:  "entry.1560957067",  // Cell Phone
+      events: "entry.772035490",   // Which events (checkboxes)
+      year:   "entry.521733897",   // What year were you born
+      source: "entry.2001024848"   // How did you hear about SB90s
+    }
+  }
+};
+/* ====================== */
+
+document.getElementById("yr").textContent = new Date().getFullYear();
+document.getElementById("ig").href = CONFIG.instagram;
+document.getElementById("mail").href = "mailto:" + CONFIG.email;
+
+const form = document.getElementById("signup");
+const status = document.getElementById("status");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const d = Object.fromEntries(new FormData(form));
+  const events = new FormData(form).getAll("events");
+  if (!d.name) { status.textContent = "Please add your full name."; return; }
+  if (!/^\S+@\S+\.\S+$/.test(d.email || "")) { status.textContent = "Please enter a valid email, like name@example.com."; return; }
+  // North American phone number: 10 digits (optional leading 1), area code and exchange can't start with 0 or 1.
+  let digits = (d.phone || "").replace(/\D/g, "");
+  if (digits.length === 11 && digits[0] === "1") digits = digits.slice(1);
+  const phoneOk = /^[2-9]\d{2}[2-9]\d{6}$/.test(digits) && !/^(\d)\1{9}$/.test(digits);
+  if (!phoneOk) { status.textContent = "Please enter a valid 10-digit cell phone number, like 519-555-0123."; return; }
+  d.phone = `${digits.slice(0,3)}-${digits.slice(3,6)}-${digits.slice(6)}`;
+  if (!d.year) { status.textContent = "Please choose your birth year."; return; }
+  if (!d.source) { status.textContent = "Please tell us how you heard about SB90s."; return; }
+  if (!events.length) {
+    status.textContent = "Please choose at least one event.";
+    return;
+  }
+  const g = CONFIG.google;
+  const ready = g.action && Object.values(g.fields).every(Boolean);
+  if (ready) {
+    try {
+      const data = new URLSearchParams();
+      data.append(g.fields.name, d.name);
+      data.append(g.fields.email, d.email);
+      data.append(g.fields.phone, d.phone);
+      events.forEach(v => data.append(g.fields.events, v));
+      data.append(g.fields.year, d.year);
+      data.append(g.fields.source, d.source);
+      // Google Forms doesn't allow reading the response, so no-cors is expected.
+      await fetch(g.action, { method: "POST", mode: "no-cors", body: data });
+      form.reset();
+      status.textContent = "You're on the list. We'll email you when the next event is confirmed.";
+    } catch {
+      status.textContent = "Something went wrong. Please try again or email us directly.";
+    }
+  } else {
+    const body = `Name: ${d.name}\nEmail: ${d.email}\nPhone: ${d.phone}\nBirth year: ${d.year}\nEvents: ${events.join(", ")}\nHeard about us: ${d.source || "-"}`;
+    window.location.href = "mailto:" + CONFIG.email +
+      "?subject=" + encodeURIComponent("Add me to the SB90s waiting list") +
+      "&body=" + encodeURIComponent(body);
+    status.textContent = "Your email app should open. Send the message to finish joining.";
+  }
+});
+
+/* Birth-year pop-up */
+const FACTS = {
+  1990: "Home Alone hit theaters.",
+  1991: "Nirvana released Nevermind.",
+  1992: "Aladdin made us all want a magic carpet.",
+  1993: "Jurassic Park changed movies forever.",
+  1994: "The Lion King was in theaters.",
+  1995: "Toy Story arrived as the first fully computer-animated feature film.",
+  1996: "Pokémon launched in Japan.",
+  1997: "Titanic took over the box office.",
+  1998: "Google was founded.",
+  1999: "The Matrix came out."
+};
+const dlg = document.getElementById("yrDialog");
+const yBtns = [...document.querySelectorAll(".years button")];
+let cur = 1995;
+
+function showYear(y){
+  cur = y;
+  document.getElementById("yBig").textContent = y;
+  document.getElementById("yAge").textContent = "Turning " + (new Date().getFullYear() - y) + " this year";
+  document.getElementById("yFact").textContent = "In " + y + ": " + FACTS[y];
+  yBtns.forEach(b => b.classList.toggle("on", +b.dataset.year === y));
+  document.getElementById("yPrev").style.visibility = y > 1990 ? "visible" : "hidden";
+  document.getElementById("yNext").style.visibility = y < 1999 ? "visible" : "hidden";
+}
+yBtns.forEach(b => b.addEventListener("click", () => { showYear(+b.dataset.year); dlg.showModal(); }));
+document.getElementById("yPrev").onclick = () => showYear(cur - 1);
+document.getElementById("yNext").onclick = () => showYear(cur + 1);
+dlg.querySelector("[data-close]").onclick = () => dlg.close();
+dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+document.getElementById("yJoin").onclick = () => {
+  form.elements.year.value = String(cur);
+  dlg.close();
+  document.getElementById("join").scrollIntoView({behavior:"smooth"});
+  setTimeout(() => form.elements.name.focus({preventScroll:true}), 500);
+};
+</script>
+</body>
+</html>
