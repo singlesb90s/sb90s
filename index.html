@@ -369,6 +369,8 @@ footer .links{display:flex;gap:1.5rem}
     <span>© <span id="yr"></span> SB90s – Singles Born in the 90s · Waterloo Region, Ontario</span>
     <div class="links">
       <a id="ig" href="#">Instagram</a>
+      <a id="tt" href="#">TikTok</a>
+      <a id="fb" href="#">Facebook</a>
       <a id="mail" href="#">Email</a>
     </div>
   </div>
@@ -378,6 +380,8 @@ footer .links{display:flex;gap:1.5rem}
 /* ===== EDIT THESE ===== */
 const CONFIG = {
   instagram: "https://www.instagram.com/singlesb90s/",
+  tiktok: "https://www.tiktok.com/@singlesb90s/",
+  facebook: "https://www.facebook.com/profile.php?id=61595652606524",
   email: "singlesb90s@gmail.com",
   // Google Form: signups are sent to your form and appear in its Responses tab / linked Sheet.
   google: {
@@ -396,6 +400,8 @@ const CONFIG = {
 
 document.getElementById("yr").textContent = new Date().getFullYear();
 document.getElementById("ig").href = CONFIG.instagram;
+document.getElementById("tt").href = CONFIG.tiktok;
+document.getElementById("fb").href = CONFIG.facebook;
 document.getElementById("mail").href = "mailto:" + CONFIG.email;
 
 const form = document.getElementById("signup");
