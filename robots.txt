@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://singlesb90s.github.io/sb90s/sitemap.xml
